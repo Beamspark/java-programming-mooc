@@ -39,6 +39,8 @@ public class OnceUponATime {
 }
 ```
 
+* **Archivo fuente:** [`OnceUponATime.java`](./OnceUponATime.java)
+
 ---
 
 ### 2. Lectura múltiple de datos y concatenación compleja
@@ -67,3 +69,5 @@ public class Story {
     }
 }
 ```
+
+* **Archivo fuente:** [`Story.java`](./Story.java)
