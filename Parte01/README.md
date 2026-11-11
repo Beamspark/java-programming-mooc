@@ -80,13 +80,14 @@ public class Story {
 ```
 
 > **Ejemplo de ejecución interactiva:**  
-> *(Los valores en cursiva simulan lo introducido por el usuario)*
+> *(Las líneas que comienzan por `>` representan el texto introducido por el usuario)*
+
 ```text
 I will tell you a story, but I need some information first.
 What is the main character called?
-Luis
+> Luis
 What is their job?
-Tools seller
+> Tools seller
 Here is the story:
 Once upon a time there was Luis, who was Tools seller.
 On the way to work, Luis reflected on life.
