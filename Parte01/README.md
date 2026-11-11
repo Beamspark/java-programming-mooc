@@ -26,7 +26,8 @@ Notas y ejercicios correspondientes a los primeros bloques de la Parte 1 de la U
 
 ### 1. Salida en consola en múltiples líneas
 * **Ejercicio:** Once Upon a Time
-* **Concepto:** Verificación del entorno, bloque `main` y llamadas secuenciales al flujo de salida `System.out`.
+* **Archivo fuente:** [`OnceUponATime.java`](./OnceUponATime.java)
+* **Concepto:** Verificación del flujo estándar `System.out` y saltos de línea automáticos.
 
 ```java
 public class OnceUponATime {
@@ -39,13 +40,21 @@ public class OnceUponATime {
 }
 ```
 
+> **Salida por consola esperada:**
+```text
+Once upon a time
+there was
+a program
+```
+
 * **Archivo fuente:** [`OnceUponATime.java`](./OnceUponATime.java)
 
 ---
 
-### 2. Lectura múltiple de datos y concatenación compleja
+### 2. Lectura interactiva y concatenación dinámica
 * **Ejercicio:** Story
-* **Concepto:** Captura sucesiva de entradas de usuario mediante `Scanner`, almacenamiento en diferentes identificadores `String` e integración de variables dentro de una plantilla de texto.
+* **Archivo fuente:** [`Story.java`](./Story.java)
+* **Concepto:** Captura sucesiva de cadenas por teclado con `Scanner.nextLine()` y reconstrucción de texto con variables.
 
 ```java
 import java.util.Scanner;
@@ -68,6 +77,20 @@ public class Story {
         System.out.println("Perhaps " + name + " will not be " + job + " forever.");
     }
 }
+```
+
+> **Ejemplo de ejecución interactiva:**  
+> *(Los valores en cursiva simulan lo introducido por el usuario)*
+```text
+I will tell you a story, but I need some information first.
+What is the main character called?
+Luis
+What is their job?
+Tools seller
+Here is the story:
+Once upon a time there was Luis, who was Tools seller.
+On the way to work, Luis reflected on life.
+Perhaps Luis will not be Tools seller forever.
 ```
 
 * **Archivo fuente:** [`Story.java`](./Story.java)
