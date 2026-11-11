@@ -19,6 +19,15 @@ Notas y ejercicios correspondientes a los primeros bloques de la Parte 1 de la U
 
 4. **Concatenación de cadenas:**
    * Uso del operador `+` para unir texto estático entre comillas dobles con los valores dinámicos guardados en variables.
+  
+5. **Tipos de datos básicos y variables:**
+   * Java es un lenguaje de tipado estático y fuertemente tipado: toda variable debe declarar su tipo antes de usarse (`String`, `int`, `double`, `boolean`).
+   * `int` para números enteros, `double` para números en coma flotante (decimales), `boolean` para valores de verdad (`true` / `false`) y `String` para cadenas de texto.
+
+6. **Conversión y tipado desde entrada estándar (*Parsing*):**
+   * El flujo de entrada con `Scanner.nextLine()` siempre devuelve texto crudo (`String`).
+   * Para operar con números o booleanos es obligatorio parsear la cadena usando los métodos de sus clases envoltorio (*wrapper classes*): `Integer.valueOf()`, `Double.valueOf()` y `Boolean.valueOf()`.
+   * Particularidad de `Boolean.valueOf()`: evalúa a `true` únicamente si la cadena de texto coincide con `"true"` (sin distinguir mayúsculas de minúsculas); cualquier otra entrada devolverá `false`.
 
 ---
 
@@ -95,3 +104,63 @@ Perhaps Luis will not be Tools seller forever.
 ```
 
 * **Archivo fuente:** [`Story.java`](./Story.java)
+
+---
+
+### 3. Captura y conversión de múltiples tipos de datos
+- **Ejercicio:** Different Types of Input
+- **Archivo fuente:** [`DifferentTypesOfInput.java`](./DifferentTypesOfInput.java)
+- **Concepto:** Lectura secuencial de teclado y conversión explícita desde `String` hacia `int`, `double` y `boolean` mediante clases envoltorio.
+
+```java
+import java.util.Scanner;
+
+public class DifferentTypesOfInput {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // 1. String
+        System.out.println("Give a string:");
+        String text = scan.nextLine();
+
+        // 2. Integer
+        System.out.println("Give an integer:");
+        int number = Integer.valueOf(scan.nextLine());
+
+        // 3. Double
+        System.out.println("Give a double:");
+        double floatingNumber = Double.valueOf(scan.nextLine());
+
+        // 4. Boolean
+        System.out.println("Give a boolean:");
+        boolean trueOrFalse = Boolean.valueOf(scan.nextLine());
+
+        // 5. Salida de resultados
+        System.out.println("You gave the string " + text);
+        System.out.println("You gave the integer " + number);
+        System.out.println("You gave the double " + floatingNumber);
+        System.out.println("You gave the boolean " + trueOrFalse);
+    }
+}
+```
+
+> **Ejemplo de ejecución interactiva:**  
+> *(Las líneas que comienzan por `>` representan el texto introducido por el usuario)*
+
+```text
+Give a string:
+> Aprendiendo Java
+Give an integer:
+> 12
+Give a double:
+> 1010.0101
+Give a boolean:
+> Va a devolver false
+You gave the string Aprendiendo Java
+You gave the integer 12
+You gave the double 1010.0101
+You gave the boolean false
+```
+
+- **Archivo fuente:** [`DifferentTypesOfInput.java`](./DifferentTypesOfInput.java)
