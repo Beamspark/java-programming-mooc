@@ -28,15 +28,3 @@ Repositorio de seguimiento y práctica del curso **Java Programming I & II** de 
 * **Control de flujo:** Diferencia entre bucles condicionales con centinela (`while`) y bucles con contador definido.
 
 ---
-
-## 🛠️ Compilación y ejecución manual
-
-Para compilar y correr cualquier ejercicio desde la terminal usando el JDK:
-
-```bash
-# 1. Compilar el archivo
-javac Parte01/03_Condicionales/ClasificadorNotas.java
-
-# 2. Ejecutar la clase compilada
-java Parte01.03_Condicionales.ClasificadorNotas
-```
