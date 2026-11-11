@@ -7,11 +7,11 @@ Repositorio de seguimiento y práctica del curso **Java Programming I & II** de 
 ## 📊 Progreso del Curso
 
 ### Java Programming I
-- [ ] **Parte 01:** Empezando, variables, lectura de datos y condicionales.
+- [ ] [**Parte 01:** Empezando, variables, lectura de datos y condicionales](./Parte01/)
 - [ ] **Parte 02:** Bucles (`while`, `for`), métodos y descomposición de problemas.
 - [ ] **Parte 03:** Listas (`ArrayList`), arrays y manipulación de texto (`String`).
-- [ ] **Parte 04:** Introducción a la Programación Orientada a Objetos (clases e instancias).
-- [ ] **Parte 05:** Profundización en POO (constructores, sobrecarga y referencias).
+- [ ] **Parte 04:** Introducción a la Programación Orientada a Objetos.
+- [ ] **Parte 05:** Profundización en POO.
 - [ ] **Parte 06:** Colecciones de objetos y separación de interfaz/lógica.
 - [ ] **Parte 07:** Algoritmos de ordenación, búsqueda y proyectos integradores.
 
