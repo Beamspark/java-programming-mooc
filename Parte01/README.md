@@ -56,8 +56,6 @@ there was
 a program
 ```
 
-* **Archivo fuente:** [`OnceUponATime.java`](./OnceUponATime.java)
-
 ---
 
 ### 2. Lectura interactiva y concatenación dinámica
@@ -102,8 +100,6 @@ Once upon a time there was Luis, who was Tools seller.
 On the way to work, Luis reflected on life.
 Perhaps Luis will not be Tools seller forever.
 ```
-
-* **Archivo fuente:** [`Story.java`](./Story.java)
 
 ---
 
@@ -163,4 +159,3 @@ You gave the double 1010.0101
 You gave the boolean false
 ```
 
-- **Archivo fuente:** [`DifferentTypesOfInput.java`](./DifferentTypesOfInput.java)
