@@ -28,6 +28,14 @@ Notas y ejercicios correspondientes a los primeros bloques de la Parte 1 de la U
    * El flujo de entrada con `Scanner.nextLine()` siempre devuelve texto crudo (`String`).
    * Para operar con números o booleanos es obligatorio parsear la cadena usando los métodos de sus clases envoltorio (*wrapper classes*): `Integer.valueOf()`, `Double.valueOf()` y `Boolean.valueOf()`.
    * Particularidad de `Boolean.valueOf()`: evalúa a `true` únicamente si la cadena de texto coincide con `"true"` (sin distinguir mayúsculas de minúsculas); cualquier otra entrada devolverá `false`.
+  
+7. **Operadores aritméticos y precedencia:**
+   * Uso de `+`, `-`, `*` y `/` respetando la jerarquía matemática estándar (multiplicación y división tienen prioridad sobre suma y resta; los paréntesis `()` alteran este orden).
+   * Cuando se combinan cadenas de texto (`String`) con operaciones aritméticas en un `System.out.println()`, es necesario encerrar las sumas o restas entre paréntesis para evitar que Java las interprete como concatenación de texto.
+
+8. **División entera vs. coma flotante y *Type Casting*:**
+   * En Java, la división entre dos variables de tipo `int` siempre devuelve un `int`, truncando la parte decimal (ej. `17 / 6` da `2`).
+   * Para obtener el resultado decimal exacto en una variable `double`, al menos uno de los operandos debe ser de tipo flotante, ya sea mediante un literal decimal (`3.0`) o aplicando conversión explícita (*casting*) antes de la operación: `(double) first / second`.
 
 ---
 
@@ -159,3 +167,49 @@ You gave the double 1010.0101
 You gave the boolean false
 ```
 
+---
+
+### 4. Operaciones aritméticas y conversión explícita (*Type Casting*)
+- **Ejercicio:** Simple Calculator
+- **Archivo fuente:** [`SimpleCalculator.java`](./SimpleCalculator.java)
+- **Concepto:** Ejecución de operaciones aritméticas básicas a partir de enteros y uso de conversión explícita `(double)` para preservar los decimales en el cociente.
+
+```java
+import java.util.Scanner;
+
+public class SimpleCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Give the first number:");
+        int first = Integer.valueOf(scanner.nextLine());
+        System.out.println("Give the second number:");
+        int second = Integer.valueOf(scanner.nextLine());
+
+        int sum = first + second;
+        int res = first - second;
+        int mul = first * second;
+        double div = (double) first / second;
+
+        System.out.println(first + " + " + second + " = " + sum);
+        System.out.println(first + " - " + second + " = " + res);
+        System.out.println(first + " * " + second + " = " + mul);
+        System.out.println(first + " / " + second + " = " + div);
+    }
+}
+```
+
+> **Ejemplo de ejecución interactiva:**  
+> *(Las líneas que comienzan por `>` representan el texto introducido por el usuario)*
+
+```text
+Give the first number:
+> 17
+Give the second number:
+> 6
+17 + 6 = 23
+17 - 6 = 11
+17 * 6 = 102
+17 / 6 = 2.8333333333333335
+```
