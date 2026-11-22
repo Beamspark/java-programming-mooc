@@ -37,6 +37,17 @@ Notas y ejercicios correspondientes a los primeros bloques de la Parte 1 de la U
    * En Java, la división entre dos variables de tipo `int` siempre devuelve un `int`, truncando la parte decimal (ej. `17 / 6` da `2`).
    * Para obtener el resultado decimal exacto en una variable `double`, al menos uno de los operandos debe ser de tipo flotante, ya sea mediante un literal decimal (`3.0`) o aplicando conversión explícita (*casting*) antes de la operación: `(double) first / second`.
 
+9. **Estructuras de control condicional (`if`, `else if`, `else`):**
+   * Permiten bifurcar el flujo de ejecución evaluando expresiones booleanas (`>`, `<`, `>=`, `<=`, `==`, `!=`).
+   * En cadenas `if - else if - else`, las condiciones se evalúan de arriba abajo y Java ejecuta únicamente el **primer bloque** cuya condición resulte verdadera, descartando el resto de ramas automáticamente.
+
+10. **Operador módulo (`%`) y operadores lógicos (`&&`, `||`, `!`):**
+    * El operador `%` devuelve el resto de una división entera, siendo el estándar para comprobar divisibilidad exacta (`numero % divisor == 0`).
+    * Los operadores lógicos permiten combinar múltiples condiciones en una misma evaluación: `&&` (AND lógico, exige que ambas se cumplan), `||` (OR lógico, basta con que se cumpla una) y `!` (NOT lógico, invierte el valor booleano).
+
+11. **Ámbito de variables (*Scope*):**
+    * Toda variable declarada dentro de un bloque condicional `{ ... }` (como `double tax`) existe únicamente dentro de las llaves de ese bloque y se destruye al salir de él.
+
 ---
 
 ## 💻 Ejercicios Seleccionados
@@ -212,4 +223,95 @@ Give the second number:
 17 - 6 = 11
 17 * 6 = 102
 17 / 6 = 2.8333333333333335
+```
+
+---
+
+### 5. Operador módulo y lógica booleana compuesta
+- **Ejercicio:** Leap Year[cite: 14]
+- **Archivo fuente:** [`LeapYear.java`](./LeapYear.java)[cite: 14]
+- **Concepto:** Determinación de años bisiestos combinando divisibilidad mediante el operador módulo (`%`), desigualdad (`!=`) y conjunción lógica (`&&`)[cite: 14].
+
+```java
+import java.util.Scanner;
+
+public class LeapYear {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // 1. Entrada: solicitud y lectura del año introducido por el usuario
+        System.out.println("Give a year:");
+        int year = Integer.valueOf(scan.nextLine());
+
+        // 2. Proceso y salida: descarte de años no bisiestos (no múltiplos de 4 o seculares no múltiplos de 400)
+        if (year % 4 != 0) {
+            System.out.println("The year is not a leap year.");
+        } else if (year % 100 == 0 && year % 400 != 0) {
+            System.out.println("The year is not a leap year.");
+        } else {
+            System.out.println("The year is a leap year.");
+        }
+    }
+}
+```
+
+> **Ejemplo de ejecución interactiva:**  
+> *(Las líneas que comienzan por `>` representan el texto introducido por el usuario)*
+
+```text
+Give a year:
+> 1900
+The year is not a leap year.
+```
+
+---
+
+### 6. Evaluación secuencial de tramos progresivos
+- **Ejercicio:** Gift Tax[cite: 15]
+- **Archivo fuente:** [`GiftTax.java`](./GiftTax.java)[cite: 15]
+- **Concepto:** Cálculo de impuestos por tramos progresivos aprovechando el descarte secuencial de `else if` y variables locales por rama[cite: 15].
+
+```java
+import java.util.Scanner;
+
+public class GiftTax {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        // 1. Entrada: lectura del valor del regalo como decimal para evitar truncamientos
+        System.out.println("Value of the gift?");
+        double value = Double.valueOf(scan.nextLine());
+
+        // 2. Proceso y salida: evaluación secuencial de tramos progresivos (de menor a mayor)
+        // Cada 'else if' descarta el tramo anterior y aplica: base + (exceso * porcentaje)
+        if (value < 5000) {
+            System.out.println("No tax!");
+        } else if (value < 25000) {
+            double tax = 100 + (value - 5000) * 0.08;
+            System.out.println("Tax: " + tax);
+        } else if (value < 55000) {
+            double tax = 1700 + (value - 25000) * 0.10;
+            System.out.println("Tax: " + tax);
+        } else if (value < 200000) {
+            double tax = 4700 + (value - 55000) * 0.12;
+            System.out.println("Tax: " + tax);
+        } else if (value < 1000000) {
+            double tax = 22100 + (value - 200000) * 0.15;
+            System.out.println("Tax: " + tax);
+        } else {
+            double tax = 142100 + (value - 1000000) * 0.17;
+            System.out.println("Tax: " + tax);
+        }
+    }
+}
+```
+
+> **Ejemplo de ejecución interactiva:**  
+> *(Las líneas que comienzan por `>` representan el texto introducido por el usuario)*
+
+```text
+Value of the gift?
+> 27500
+Tax: 1950.0
 ```
