@@ -1,15 +1,15 @@
-<h1 style="color: #ab47bc;">🔄 Parte 02: Estructuras Repetitivas y Métodos</h1>
+# Parte 02: Estructuras Repetitivas y Métodos
 
 Notas y ejercicios correspondientes al segundo bloque de Java Programming I (Universidad de Helsinki): patrones de cálculo, bucles (`while` y `for`) y descomposición modular mediante métodos.
 
 ---
 
-<h2 style="color: #29b6f6;">📌 Conceptos Clave Asimilados</h2>
+## 📌 Conceptos Clave Asimilados
 
 *(Iremos completando esta sección con los conceptos ancla de bucles y métodos conforme avances)*
 
 ---
 
-<h2 style="color: #29b6f6;">💻 Ejercicios Seleccionados</h2>
+## 💻 Ejercicios Seleccionados
 
 *(Aquí documentaremos únicamente los ejercicios integradores de cada bloque)*
